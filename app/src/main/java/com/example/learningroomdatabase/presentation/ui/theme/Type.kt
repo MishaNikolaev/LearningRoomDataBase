@@ -1,4 +1,4 @@
-package com.example.learningroomdatabase.ui.theme
+package com.example.learningroomdatabase.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

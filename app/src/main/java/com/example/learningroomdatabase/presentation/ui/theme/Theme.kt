@@ -1,4 +1,4 @@
-package com.example.learningroomdatabase.ui.theme
+package com.example.learningroomdatabase.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
