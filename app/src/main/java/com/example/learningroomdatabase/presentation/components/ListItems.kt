@@ -15,15 +15,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.room.Delete
+import com.example.learningroomdatabase.data.NameEntity
 
 @Composable
-fun ListItem(){
+fun ListItem(item : NameEntity,
+             onClick: (NameEntity) -> Unit,
+             onClickDelete: (NameEntity) -> Unit){
     Card(modifier = Modifier
         .fillMaxWidth()
-        .padding(5.dp)){
+        .padding(5.dp).clickable {
+            onClick(item)
+        }){
         Row(modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically){
-            Text(text = "Test 1",
+            Text(text = item.name,
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f)
@@ -31,7 +37,9 @@ fun ListItem(){
                     .clickable {
 
                     })
-            IconButton(onClick = { /*TODO*/ },) {
+            IconButton(onClick = {
+                onClickDelete(item)
+            },) {
                 Icon(imageVector = Icons.Default.Delete, contentDescription = "Delete")
             }
         }
